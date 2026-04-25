@@ -27,3 +27,15 @@ node_modules/
 dist/
 build/
 .cache/
+/assets
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+*.ico
+*.webp
+*.mp4
+*.mp3
+*.wav
+*.ogg
