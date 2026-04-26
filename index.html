@@ -4,7 +4,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>GROUP SESSIONS</title>
+  <title>Fit Over 40 Foundations | Group Session</title>
+  <meta name="description"
+    content="A beginner-friendly group training for adults over 40 to move better, build strength safely, and start training the right way." />
+  <meta property="og:title" content="Fit Over 40 Foundations" />
+  <meta property="og:description"
+    content="A beginner-friendly group training for adults over 40 to move better, build strength safely, and start training the right way." />
+  <meta name="twitter:title" content="Fit Over 40 Foundations" />
+  <meta name="twitter:description"
+    content="A beginner-friendly group training for adults over 40 to move better, build strength safely, and start training the right way." />
   <link rel="icon" type="image/png" href="./assets/coach-logo.png" />
   <link rel="apple-touch-icon" href="./assets/coach-logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -54,14 +62,15 @@
     }
 
     .hero__bg {
-      position: absolute;
+      position: fixed;
       inset: 0;
       background-image: url("./assets/coach.png");
-      background-color: var(--bg-dark);
+      background-color: #000;
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center 30%;
       z-index: 0;
+      pointer-events: none;
     }
 
     @media (max-width: 600px) {
@@ -71,7 +80,7 @@
     }
 
     .hero__overlay {
-      position: absolute;
+      position: fixed;
       inset: 0;
       background: linear-gradient(180deg,
           rgba(5, 6, 8, 0.88) 0%,
@@ -79,6 +88,7 @@
           rgba(5, 6, 8, 0.92) 100%),
         radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201, 162, 39, 0.12), transparent);
       z-index: 1;
+      pointer-events: none;
     }
 
     .wrap {
@@ -99,6 +109,29 @@
       justify-content: space-between;
       gap: 1rem;
       margin-bottom: clamp(1.5rem, 4vw, 2.5rem);
+    }
+
+    .maintenance-banner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(232, 93, 93, 0.14);
+      color: rgba(255, 255, 255, 0.92);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(10px);
+      text-align: center;
+      width: max-content;
+      margin: 0 auto;
+    }
+
+    .maintenance-banner.is-hidden {
+      display: none;
     }
 
     .header__side {
@@ -181,15 +214,15 @@
       }
 
       .coach-chip {
-          display: inline-flex;
-          font-size: 0.66rem;
-          letter-spacing: 0.06em;
+        display: inline-flex;
+        font-size: 0.66rem;
+        letter-spacing: 0.06em;
       }
 
-        .coach-chip strong {
-          font-size: 0.95rem;
-          letter-spacing: 0.1em;
-        }
+      .coach-chip strong {
+        font-size: 0.95rem;
+        letter-spacing: 0.1em;
+      }
     }
 
     .brand {
@@ -248,6 +281,7 @@
 
     .headline {
       max-width: 36rem;
+      text-align: center;
     }
 
     .headline__eyebrow {
@@ -284,11 +318,23 @@
 
     .headline h1 {
       font-family: var(--font-title);
-      font-size: clamp(2.85rem, 6.8vw, 4.2rem);
+      font-size: clamp(2.15rem, 5.2vw, 3.25rem);
       line-height: 0.95;
       letter-spacing: 0.02em;
       margin-bottom: 1.05rem;
       font-weight: 400;
+    }
+
+    .headline__sub {
+      display: block;
+      margin-top: 0.6rem;
+      font-family: var(--font-body);
+      font-size: 1.3rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #AB9883;
+      font-weight: 700;
+      line-height: 1.2;
     }
 
     .headline p {
@@ -297,6 +343,8 @@
       color: var(--text-muted);
       font-weight: 600;
       max-width: 32ch;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .headline__meta {
@@ -307,6 +355,8 @@
       letter-spacing: 0.02em;
       color: rgba(242, 240, 235, 0.58);
       font-weight: 600;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .headline__meta p {
@@ -319,7 +369,7 @@
       width: 17px;
       height: 17px;
       flex-shrink: 0;
-      color: var(--gold);
+      color: rgba(255, 255, 255, 0.78);
       opacity: 0.95;
       margin-top: 0.1em;
     }
@@ -338,6 +388,7 @@
       align-items: flex-start;
       gap: 0.45rem;
       margin-bottom: 0.45rem;
+      justify-content: center;
     }
 
     .headline__meta-links {
@@ -354,14 +405,17 @@
       display: grid;
       gap: 0.35rem;
       max-width: 32rem;
+      margin-left: auto;
+      margin-right: auto;
+      justify-items: center;
     }
 
     .coach-meta__title {
-      font-size: 0.72rem;
+      font-size: 1.22rem;
       letter-spacing: 0.22em;
       text-transform: uppercase;
       font-weight: 800;
-      color: rgba(255, 255, 255, 0.6);
+      color: #AB9883;
     }
 
     .coach-meta__name {
@@ -422,6 +476,61 @@
       display: grid;
       grid-template-columns: 1fr;
       gap: 1rem;
+    }
+
+    .package-choice {
+      width: min(520px, 100%);
+      margin: 0 auto 1.1rem;
+      padding: 0.95rem 1rem;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(10, 11, 12, 0.32);
+      backdrop-filter: blur(10px);
+      display: grid;
+      gap: 0.7rem;
+    }
+
+    .package-choice__title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 800;
+      text-align: center;
+    }
+
+    .package-choice__options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+    }
+
+    .package-choice__options label {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(10, 11, 12, 0.24);
+      padding: 0.75rem 0.95rem;
+      cursor: pointer;
+      user-select: none;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .package-choice__options input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--gold);
+    }
+
+    .package-choice__options input:checked+span {
+      color: #ffffff;
     }
 
     @media (min-width: 540px) and (max-width: 899px) {
@@ -565,8 +674,8 @@
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      color: #0a0b0c;
-      background: #ffffff;
+      color: #ffffff;
+      background: #AB9883;
       border: none;
       border-radius: 6px;
       cursor: pointer;
@@ -574,7 +683,7 @@
     }
 
     .btn:hover {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(171, 152, 131, 0.7);
       transform: translateY(-1px);
     }
 
@@ -625,7 +734,7 @@
       margin-top: 1.15rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
+      /* gap: 0.6rem; */
       padding: 0.7rem 0.95rem;
       border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, 0.14);
@@ -634,8 +743,11 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       font-weight: 800;
-      font-size: 0.75rem;
+      font-size: 0.9rem;
       color: rgba(255, 255, 255, 0.78);
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
 
     .promo-pill strong {
@@ -766,7 +878,7 @@
       padding: 1.25rem 1.25rem 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 0.9rem;
+      gap: 1.05rem;
     }
 
     .field label {
@@ -777,6 +889,11 @@
       color: var(--text-muted);
       margin-bottom: 0.4rem;
       font-weight: 600;
+    }
+
+    .field--stack {
+      display: grid;
+      gap: 0.55rem;
     }
 
     .field input,
@@ -792,6 +909,48 @@
       border-radius: 6px;
       outline: none;
       transition: border-color 0.2s;
+    }
+
+    .field input::placeholder {
+      color: rgba(242, 240, 235, 0.42);
+    }
+
+    .divider {
+      height: 1px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.08);
+      margin: 0.2rem 0;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: rgba(255, 255, 255, 0.72);
+      font-weight: 800;
+      margin-bottom: 0.1rem;
+    }
+
+    .info-box {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      background: rgba(10, 11, 12, 0.35);
+      padding: 0.9rem 0.95rem;
+      display: grid;
+      gap: 0.45rem;
+    }
+
+    .info-box p {
+      margin: 0;
+      color: rgba(242, 240, 235, 0.65);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      font-weight: 500;
+    }
+
+    .info-box strong {
+      color: #ffffff;
+      font-weight: 800;
     }
 
     .field input:focus,
@@ -852,6 +1011,23 @@
       line-height: 1.45;
       font-weight: 500;
       color: var(--text-muted);
+    }
+
+    .form-note {
+      margin-top: 0.5rem;
+      border: 1px solid rgba(201, 162, 39, 0.3);
+      border-radius: 10px;
+      background: rgba(201, 162, 39, 0.1);
+      padding: 0.85rem 0.95rem;
+      color: rgba(255, 255, 255, 0.9);
+      font-weight: 700;
+      line-height: 1.45;
+      letter-spacing: 0.01em;
+    }
+
+    .form-note strong {
+      color: #ffffff;
+      font-weight: 900;
     }
 
     .form-actions {
@@ -1052,21 +1228,27 @@
           <!-- <span class="gym-chip">GROUP SESSIONS</span> -->
         </div>
 
-        <div class="header__center" aria-hidden="true"></div>
+        <div class="header__center">
+          <!-- Toggle maintenance banner: remove/add "is-hidden" -->
+          <div class="maintenance-banner is-hidden" role="status" aria-live="polite">
+            Maintenance in progress
+          </div>
+        </div>
 
         <div class="header__side header__badge" aria-label="Coach">
-          <span class="coach-chip"><strong>Fit Over 40</strong><span>Coach</span></span>
+          <span class="coach-chip"><strong>Fit Over 40</strong><span>Ahmed Aly</span></span>
           <img class="header__side-logo header__side-logo--round" src="./assets/coach-logo.png" alt="Coach logo" />
         </div>
       </header>
       <div class="hero__main">
         <div class="headline">
-          <p class="headline__eyebrow">LA7</p>
-          <div class="start-badge" aria-label="Group sessions start date">
+          <!-- <p class="headline__eyebrow">LA7</p> -->
+          <!-- <div class="start-badge" aria-label="Group sessions start date">
             <strong>www.la7gym.com</strong>
-          </div>
-          <h1>GROUP SESSIONS</h1>
-          <p>Strength has no age · Stay tuned</p>
+          </div> -->
+          <h1>Fit Over 40 Foundations<span class="headline__sub">Group session</span></h1>
+          <p>A beginner-friendly group training for adults over 40 to move better, build strength safely, and start
+            training the right way.</p>
           <div class="headline__meta" aria-label="Gym location and links">
             <p class="headline__meta-loc">
               <svg class="headline__meta-ico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -1075,7 +1257,7 @@
                   stroke-linejoin="round" />
                 <circle cx="12" cy="10.5" r="2.25" stroke="currentColor" stroke-width="1.5" fill="none" />
               </svg>
-              <span>Location: Garden 8 — التجمع الخامس</span>
+              <span>Location: LA7 Garden 8 — New Cairo</span>
             </p>
             <div class="coach-meta" aria-label="Coach">
               <div class="coach-meta__title">Coach</div>
@@ -1089,49 +1271,62 @@
                     <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
                     <circle cx="18" cy="6" r="1.2" fill="currentColor" stroke="none" />
                   </svg>
-                  <span>@fitandhealthyover.40</span>
+                  <span>@fitandhealthyover40</span>
                 </a>
               </div>
             </div>
           </div>
           <div class="promo-pill" aria-label="Promotion">
-            <strong>Every Saturday</strong>
-            <span>at 9:00</span>
-            <span aria-hidden="true">·</span>
-            <span>Starts 02 May 2026</span>
+            <strong>Every Saturday — 9:00 AM</strong>
+            <span>Starts May 2</span>
           </div>
         </div>
-        <div class="cards" role="list" id="packages">
-          <article class="card" role="listitem">
-            <span class="card__label">LA7 Member</span>
-            <div class="price-table" aria-label="LA7 Member pricing">
-              <div class="price-row">
-                <span class="price-row__name">5 classes</span>
-                <span class="price-row__value">1500 <span>EGP</span></span>
+        <div class="package-choice" aria-label="Choose package">
+          <div class="package-choice__title">Are you an LA7 member?</div>
+          <div class="package-choice__options" role="radiogroup" aria-label="LA7 membership choice">
+            <label>
+              <input type="radio" name="packageChoice" value="member" />
+              <span>Member</span>
+            </label>
+            <label>
+              <input type="radio" name="packageChoice" value="nonmember" />
+              <span>Not a member</span>
+            </label>
+          </div>
+          <div class="cards" role="list" id="packages">
+            <article class="card" role="listitem" id="package-member" style="display:none;">
+              <span class="card__label">LA7 Member</span>
+              <div class="price-table" aria-label="LA7 Member pricing">
+                <div class="price-row">
+                  <span class="price-row__name">5 classes</span>
+                  <span class="price-row__value">1500 <span>EGP</span></span>
+                </div>
+                <div class="price-row">
+                  <span class="price-row__name">Walk in</span>
+                  <span class="price-row__value">400 <span>EGP</span></span>
+                </div>
               </div>
-              <div class="price-row">
-                <span class="price-row__name">Walk in</span>
-                <span class="price-row__value">400 <span>EGP</span></span>
+              <p style="margin-top: 0.7rem;">Session Duration: 55 min</p>
+              <button type="button" class="btn js-open-modal" data-package="member">Book for a trial on Saturday — 9:00
+                AM (May 2026)</button>
+            </article>
+            <article class="card card--featured" role="listitem" id="package-nonmember" style="display:none;">
+              <span class="card__label">LA7 Non member</span>
+              <div class="price-table" aria-label="LA7 Non member pricing">
+                <div class="price-row">
+                  <span class="price-row__name">5 classes</span>
+                  <span class="price-row__value">2000 <span>EGP</span></span>
+                </div>
+                <div class="price-row">
+                  <span class="price-row__name">Walk in</span>
+                  <span class="price-row__value">500 <span>EGP</span></span>
+                </div>
               </div>
-            </div>
-            <p style="margin-top: 0.7rem;">We’ll confirm your option and timing on WhatsApp.</p>
-            <button type="button" class="btn js-open-modal" data-package="member">Join now</button>
-          </article>
-          <article class="card card--featured" role="listitem">
-            <span class="card__label">LA7 Non member</span>
-            <div class="price-table" aria-label="LA7 Non member pricing">
-              <div class="price-row">
-                <span class="price-row__name">5 classes</span>
-                <span class="price-row__value">2000 <span>EGP</span></span>
-              </div>
-              <div class="price-row">
-                <span class="price-row__name">Walk in</span>
-                <span class="price-row__value">500 <span>EGP</span></span>
-              </div>
-            </div>
-            <p style="margin-top: 0.7rem;">We’ll confirm your option and timing on WhatsApp.</p>
-            <button type="button" class="btn js-open-modal" data-package="nonmember">Join now</button>
-          </article>
+              <p style="margin-top: 0.7rem;">Session Duration: 55 min</p>
+              <button type="button" class="btn js-open-modal" data-package="nonmember">Book for a trial on Saturday —
+                9AM (May 2026)</button>
+            </article>
+          </div>
         </div>
       </div>
       <div class="foot" role="contentinfo">
@@ -1142,9 +1337,9 @@
               stroke-linejoin="round" />
             <circle cx="12" cy="10.5" r="2.25" stroke="currentColor" stroke-width="1.5" fill="none" />
           </svg>
-          <span>Garden 8 · التجمع الخامس · Spots are limited</span>
+          <span>LA7 Garden 8 · New Cairo · Spots are limited</span>
         </div>
-        <div class="foot__copy">© 2026</div>
+        <!-- <div class="foot__copy">© 2026</div> -->
       </div>
     </div>
   </section>
@@ -1165,71 +1360,62 @@
             </svg>
           </div>
         </div>
-        <h3>You’re in</h3>
+        <h3>Thank you</h3>
         <p>We received your details. We’ll review your data and contact you on WhatsApp shortly.</p>
       </div>
       <form class="modal__form form-wrap" id="subscribe-form" novalidate>
         <input type="hidden" name="package" id="form-package" value="member" />
-        <div class="field">
-          <label for="fullName">Full name</label>
-          <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="As on your ID" />
-          <p class="error-msg">Please enter your full name.</p>
+        <div id="step-1">
+          <div class="field">
+            <label for="fullName">Full name</label>
+            <input type="text" id="fullName" name="fullName" required autocomplete="name" placeholder="As on your ID" />
+            <p class="error-msg">Please enter your full name.</p>
+          </div>
+          <div class="field">
+            <label for="whatsapp">WhatsApp number</label>
+            <input type="tel" id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="e.g. 01xxxxxxxxx" />
+            <p class="error-msg">Enter a valid number.</p>
+          </div>
+          <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" min="16" max="100" required placeholder="Years" />
+            <p class="error-msg">Enter a valid age (16+).</p>
+          </div>
+
+          <div class="field">
+            <label for="trainingBackground">Training Background</label>
+            <select id="trainingBackground" name="trainingBackground" required>
+              <option value="" disabled selected>Pick one</option>
+              <option value="beginner">Beginner (never trained before)</option>
+              <option value="returning">Returning after a long break</option>
+              <option value="active">Currently active</option>
+            </select>
+            <p class="error-msg">Please select an option.</p>
+          </div>
+
+          <div class="checklist">
+            <label class="check">
+              <input type="checkbox" id="medicalDisclaimer" name="medicalDisclaimer" value="1" required />
+              <span>I confirm that I do not have any medical condition or injury that prevents me from participating
+                without doctor approval.</span>
+            </label>
+          </div>
+
+          <div class="form-note" role="note">
+            <strong>Note:</strong> filling out the form doesn’t automatically confirm your spot.
+            <br /><br />
+            Due to limited availability, your attendance is only confirmed once you receive a confirmation message from
+            us.
+          </div>
+
+          <p class="field--hint" id="box-error" style="color: var(--error); display: none; margin: 0;">
+            Please confirm the medical disclaimer box to continue.
+          </p>
+
+          <div class="form-actions">
+            <button type="submit" class="btn" id="submit-btn">Submit</button>
+          </div>
         </div>
-        <div class="field">
-          <label for="whatsapp">WhatsApp number</label>
-          <input type="tel" id="whatsapp" name="whatsapp" required inputmode="tel" placeholder="e.g. 01xxxxxxxxx" />
-          <p class="error-msg">Enter a valid number.</p>
-        </div>
-        <div class="field">
-          <label for="age">Age</label>
-          <input type="number" id="age" name="age" min="16" max="100" required placeholder="Years" />
-          <p class="error-msg">Enter a valid age (16+).</p>
-        </div>
-        <div class="field">
-          <label for="locationCairo">Location in Greater Cairo</label>
-          <select id="locationCairo" name="locationCairo" required>
-            <option value="" disabled selected>Choose your area</option>
-            <option value="5th">التجمع الخامس (5th Settlement)</option>
-            <option value="heliopolis">مصر الجديدة (Heliopolis)</option>
-            <option value="nasr">مدينة نصر (Nasr City)</option>
-            <option value="maadi">المعادي (Maadi)</option>
-            <option value="zamalek">الزمالك (Zamalek)</option>
-            <option value="dokki_mohandessin">الدقي / المهندسين</option>
-            <option value="giza">الجيزة / 6th October (examples)</option>
-            <option value="other_cairo">Other — Cairo &amp; immediate surroundings</option>
-          </select>
-          <p class="field--hint">Subscribers should be able to reach our Cairo location.</p>
-          <p class="error-msg">Select where you are based.</p>
-        </div>
-        <div class="field">
-          <label for="trainingLevel">Your training background</label>
-          <select id="trainingLevel" name="trainingLevel" required>
-            <option value="" disabled selected>Pick one</option>
-            <option value="experienced">I have trained before</option>
-            <option value="returning">I am back after a long time</option>
-            <option value="other">Other</option>
-          </select>
-          <p class="error-msg">Please select an option.</p>
-        </div>
-        <div class="checklist">
-          <label class="check">
-            <input type="checkbox" id="noInjuries" name="noInjuries" value="1" required />
-            <span>I confirm I have no medical condition or injury that prevents me from taking this class without doctor
-              clearance.</span>
-          </label>
-          <!-- <label class="check">
-            <input type="checkbox" id="knowGym" name="knowGym" value="1" />
-            <span>I know LA7 / I have visited the gym before.</span>
-          </label> -->
-        </div>
-        <p class="field--hint" id="box-error" style="color: var(--error); display: none; margin: 0;">Please confirm the
-          medical clearance box to continue.</p>
-        <div class="form-actions">
-          <button type="submit" class="btn" id="submit-btn">Send subscription</button>
-        </div>
-        <p class="field--hint" style="margin: 0; text-align: center;">
-          After submitting, we’ll review your data and contact you shortly to continue the next steps.
-        </p>
       </form>
     </div>
   </div>
@@ -1243,6 +1429,32 @@
       const successMsg = document.getElementById("success-msg");
       const openButtons = document.querySelectorAll(".js-open-modal");
       const boxError = document.getElementById("box-error");
+      const step1 = document.getElementById("step-1");
+      const submitBtn = document.getElementById("submit-btn");
+      const packageChoiceInputs = document.querySelectorAll('input[name="packageChoice"]');
+      const packageMemberCard = document.getElementById("package-member");
+      const packageNonMemberCard = document.getElementById("package-nonmember");
+
+      function updatePackageCards(choice) {
+        if (!choice) {
+          if (packageMemberCard) packageMemberCard.style.display = "none";
+          if (packageNonMemberCard) packageNonMemberCard.style.display = "none";
+          return;
+        }
+        const isMember = choice === "member";
+        if (packageMemberCard) packageMemberCard.style.display = isMember ? "" : "none";
+        if (packageNonMemberCard) packageNonMemberCard.style.display = isMember ? "none" : "";
+      }
+
+      if (packageChoiceInputs.length) {
+        packageChoiceInputs.forEach(function (input) {
+          input.addEventListener("change", function () {
+            updatePackageCards(input.value);
+          });
+        });
+        const checked = document.querySelector('input[name="packageChoice"]:checked');
+        updatePackageCards(checked ? checked.value : "");
+      }
 
       function openModal(pkg) {
         if (pkg) formPackage.value = pkg;
@@ -1270,6 +1482,7 @@
             f.classList.remove("has-error");
           });
           boxError.style.display = "none";
+          step1.style.display = "";
           openModal();
         });
       });
@@ -1282,7 +1495,7 @@
         if (e.key === "Escape" && backdrop.classList.contains("is-open")) closeModal();
       });
 
-      function validate() {
+      function validateStep1() {
         let ok = true;
         form.querySelectorAll(".field").forEach(function (f) {
           f.classList.remove("has-error");
@@ -1307,17 +1520,12 @@
           ok = false;
         }
 
-        if (!form.locationCairo.value) {
-          form.locationCairo.closest(".field").classList.add("has-error");
+        if (!form.trainingBackground.value) {
+          form.trainingBackground.closest(".field").classList.add("has-error");
           ok = false;
         }
 
-        if (!form.trainingLevel.value) {
-          form.trainingLevel.closest(".field").classList.add("has-error");
-          ok = false;
-        }
-
-        if (!form.noInjuries.checked) {
+        if (!form.medicalDisclaimer.checked) {
           boxError.style.display = "block";
           ok = false;
         }
@@ -1326,20 +1534,43 @@
 
       form.addEventListener("submit", function (e) {
         e.preventDefault();
-        if (!validate()) return;
+        if (!validateStep1()) return;
+
         const data = {
           package: formPackage.value,
+          la7Member: formPackage.value === "member" ? "yes" : "no",
           fullName: form.fullName.value.trim(),
           whatsapp: form.whatsapp.value,
           age: form.age.value,
-          location: form.locationCairo.options[form.locationCairo.selectedIndex].text,
-          trainingLevel: form.trainingLevel.value,
-          noInjuries: form.noInjuries.checked,
-          knowGym: form.knowGym.checked
+          trainingBackground: form.trainingBackground.value,
+          medicalDisclaimer: form.medicalDisclaimer.checked
         };
-        console.log("Subscription payload:", data);
-        form.classList.add("is-hidden");
-        successMsg.classList.add("is-visible");
+        submitBtn.disabled = true;
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = "Sending...";
+        submitBtn.style.opacity = "0.85";
+
+        fetch("./api/submit.php", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data)
+        })
+          .then(async (res) => {
+            const payload = await res.json().catch(() => ({}));
+            if (!res.ok || !payload.ok) {
+              throw new Error(payload.error || "Could not submit. Please try again.");
+            }
+            form.classList.add("is-hidden");
+            successMsg.classList.add("is-visible");
+          })
+          .catch((err) => {
+            alert(err.message || "Could not submit. Please try again.");
+          })
+          .finally(() => {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+            submitBtn.style.opacity = "";
+          });
       });
     })();
   </script>

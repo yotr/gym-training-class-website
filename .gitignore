@@ -27,6 +27,7 @@ node_modules/
 dist/
 build/
 .cache/
+/post
 /assets
 *.png
 *.jpg
